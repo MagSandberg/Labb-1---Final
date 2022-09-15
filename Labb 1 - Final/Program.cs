@@ -1,8 +1,4 @@
-﻿using System;
-using System.Buffers;
-using System.Linq;
-
-Console.WriteLine("Skriv en tecken-sträng: ");
+﻿Console.WriteLine("Skriv en tecken-sträng: ");
 string userInput = Console.ReadLine();
 
 // Long för att addera alla sekvenser
@@ -26,6 +22,7 @@ for (int i = 0; i < userInput.Length; i++)
                 {
                     // Sträng för att kunna parsa till long.
                     string sequenceToLong = "";
+
                     //Loop för att skriva ut sekvenser i annan färg samt resten av userInput
                     for (int k = 0; k < userInput.Length; k++)
                     {
@@ -48,6 +45,7 @@ for (int i = 0; i < userInput.Length; i++)
                     break;
                 }
             }
+            //ANNARS börja om loopen OM ingen siffra hittades
             else
             {
                 break;
