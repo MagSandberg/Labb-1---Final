@@ -4,6 +4,8 @@ using System.Linq;
 
 Console.WriteLine("Skriv en tecken-sträng: ");
 string userInput = Console.ReadLine();
+
+// Long för att addera alla sekvenser
 long sum = 0;
 
 // Iterar genom userArray och letar upp sekvenser som sedan skrivs ut.
@@ -19,10 +21,12 @@ for (int i = 0; i < userInput.Length; i++)
             if (char.IsDigit(userInput[j]))
             {
                 sequence[j] = userInput[j];
-                //OM siffra i är lika med siffra j har vi hittat en sekvens
+                //OM siffran [i] är lika med siffran [j] har vi hittat en sekvens
                 if (userInput[i] == userInput[j])
                 {
+                    // Sträng för att kunna parsa till long.
                     string sequenceToLong = "";
+                    //Loop för att skriva ut sekvenser i annan färg samt resten av userInput
                     for (int k = 0; k < userInput.Length; k++)
                     {
                         if (userInput[k] == sequence[k])
@@ -39,8 +43,8 @@ for (int i = 0; i < userInput.Length; i++)
                     }
                     Console.WriteLine();
 
+                    //Adderar alla sekvenser
                     sum += long.Parse(sequenceToLong);
-
                     break;
                 }
             }
@@ -51,4 +55,6 @@ for (int i = 0; i < userInput.Length; i++)
         }
     }
 }
-Console.WriteLine($"Total sum of all sequences: {sum}");
+Console.ForegroundColor = ConsoleColor.White;
+Console.WriteLine($"\nSumman av alla sekvenser: {sum}");
+Console.ForegroundColor = ConsoleColor.Gray;
